@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="247.0" prefWidth="132.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.MainpageController">
+   <children>
+      <Button fx:id="buttonGroups" layoutX="37.0" layoutY="83.0" mnemonicParsing="false" text="Группы" />
+      <Button fx:id="buttonSubjects" layoutX="28.0" layoutY="122.0" mnemonicParsing="false" text="Предметы" />
+      <Button fx:id="buttonStudents" layoutX="33.0" layoutY="195.0" mnemonicParsing="false" text="Ученики" />
+      <Button fx:id="buttonTeachers" layoutX="15.0" layoutY="161.0" mnemonicParsing="false" text="Преподаватели" />
+      <Button fx:id="buttonAccount" layoutX="35.0" layoutY="28.0" mnemonicParsing="false" text="Аккаунт" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.SubjectsController">
+    <children>
+        <Button fx:id="buttonAdd" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Добавить" />
+        <Button fx:id="buttonChange" layoutX="95.0" layoutY="14.0" mnemonicParsing="false" text="Изменить/Удалить" />
+        <TextField fx:id="fieldSearch" layoutX="274.0" layoutY="14.0" />
+        <Label layoutX="230.0" layoutY="18.0" text="Поиск" />
+        <Button fx:id="buttonSearch" layoutX="434.0" layoutY="14.0" mnemonicParsing="false" text="Искать" />
+        <Button fx:id="buttonCategories" layoutX="499.0" layoutY="14.0" mnemonicParsing="false" text="Категории" />
+        <TableView fx:id="table" layoutX="14.0" layoutY="47.0" prefHeight="740.0" prefWidth="1170.0">
+            <columns>
+                <TableColumn fx:id="tableId" prefWidth="31.0" text="id" />
+                <TableColumn fx:id="tableName" prefWidth="1138.0" text="Название" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
