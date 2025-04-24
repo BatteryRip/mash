@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.SelectStudentsController">
+    <children>
+        <TextField fx:id="fieldSearch" layoutX="759.0" layoutY="14.0" />
+        <Label layoutX="715.0" layoutY="18.0" text="Поиск" />
+        <Button fx:id="buttonSearch" layoutX="919.0" layoutY="14.0" mnemonicParsing="false" text="Искать" />
+        <TableView fx:id="table" layoutX="14.0" layoutY="47.0" prefHeight="740.0" prefWidth="1170.0">
+            <columns>
+                <TableColumn fx:id="tableId" prefWidth="31.0" text="id" />
+                <TableColumn fx:id="tableName" prefWidth="295.0" text="Предмет" />
+                <TableColumn prefWidth="31.0" text="1" />
+                <TableColumn prefWidth="31.0" text="2" />
+                <TableColumn prefWidth="31.0" text="3" />
+                <TableColumn prefWidth="31.0" text="4" />
+                <TableColumn prefWidth="31.0" text="5" />
+                <TableColumn prefWidth="31.0" text="6" />
+                <TableColumn prefWidth="31.0" text="7" />
+                <TableColumn prefWidth="31.0" text="8" />
+                <TableColumn prefWidth="31.0" text="9" />
+                <TableColumn prefWidth="31.0" text="10" />
+                <TableColumn prefWidth="31.0" text="11" />
+                <TableColumn prefWidth="31.0" text="12" />
+                <TableColumn prefWidth="31.0" text="13" />
+                <TableColumn prefWidth="31.0" text="14" />
+                <TableColumn prefWidth="31.0" text="15" />
+                <TableColumn prefWidth="31.0" text="16" />
+                <TableColumn prefWidth="31.0" text="17" />
+                <TableColumn prefWidth="31.0" text="18" />
+                <TableColumn prefWidth="31.0" text="19" />
+                <TableColumn prefWidth="31.0" text="20" />
+                <TableColumn prefWidth="31.0" text="21" />
+                <TableColumn prefWidth="31.0" text="22" />
+                <TableColumn prefWidth="31.0" text="23" />
+                <TableColumn prefWidth="31.0" text="24" />
+                <TableColumn prefWidth="31.0" text="25" />
+                <TableColumn prefWidth="31.0" text="26" />
+                <TableColumn prefWidth="31.0" text="27" />
+                <TableColumn prefWidth="31.0" text="28" />
+                <TableColumn prefWidth="31.0" text="29" />
+                <TableColumn prefWidth="31.0" text="30" />
+                <TableColumn prefWidth="31.0" text="31" />
+            </columns>
+        </TableView>
+      <Label fx:id="labelInfo" layoutX="14.0" layoutY="18.0" text="ID:XXX Фамилия Имя Отчество Группа (Аккаунт)" />
+      <Button layoutX="988.0" layoutY="14.0" mnemonicParsing="false" text="Средний балл/Итоговые оценки" />
+      <ComboBox fx:id="fieldMonth" layoutX="554.0" layoutY="14.0" prefWidth="150.0" />
+      <Label layoutX="509.0" layoutY="18.0" text="Месяц" />
+    </children>
+</AnchorPane>

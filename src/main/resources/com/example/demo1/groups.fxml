@@ -15,7 +15,6 @@
       <TextField fx:id="fieldSearch" layoutX="274.0" layoutY="14.0" />
       <Label layoutX="230.0" layoutY="18.0" text="Поиск" />
       <Button fx:id="buttonSearch" layoutX="434.0" layoutY="14.0" mnemonicParsing="false" text="Искать" />
-      <Button fx:id="buttonCategories" layoutX="499.0" layoutY="14.0" mnemonicParsing="false" text="Категории" />
       <TableView fx:id="table" layoutX="14.0" layoutY="47.0" prefHeight="740.0" prefWidth="1170.0">
         <columns>
           <TableColumn fx:id="tableId" prefWidth="31.0" text="id" />
@@ -56,5 +55,7 @@
       <ComboBox fx:id="comboGroup" layoutX="827.0" layoutY="14.0" prefWidth="150.0" promptText="Группа" />
       <ComboBox fx:id="comboSubject" layoutX="988.0" layoutY="14.0" prefHeight="25.0" prefWidth="194.0" promptText="Предмет" />
       <ComboBox fx:id="comboMonth" layoutX="668.0" layoutY="14.0" prefWidth="150.0" promptText="Месяц" />
+      <Label layoutX="493.0" layoutY="10.0" text="Руководитель:" />
+      <Label fx:id="labelTeacher" layoutX="493.0" layoutY="27.0" text="Фамилия Имя Отчество" />
    </children>
 </AnchorPane>

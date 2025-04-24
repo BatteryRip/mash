@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="263.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.ChangeStudentsController">
+    <children>
+        <TextField fx:id="fieldSurname" layoutX="25.0" layoutY="38.0" />
+        <Label layoutX="25.0" layoutY="21.0" text="Фамилия" />
+        <TextField fx:id="fieldName" layoutX="25.0" layoutY="86.0" />
+        <Label layoutX="25.0" layoutY="69.0" text="Имя" />
+        <TextField fx:id="fieldPatronym" layoutX="25.0" layoutY="134.0" />
+        <Label layoutX="25.0" layoutY="117.0" text="Отчество" />
+        <ComboBox fx:id="fieldGroup" layoutX="26.0" layoutY="184.0" prefWidth="150.0" />
+        <Label layoutX="26.0" layoutY="167.0" text="Группа" />
+        <Button fx:id="buttonChange" layoutX="30.0" layoutY="224.0" mnemonicParsing="false" text="Изменить" />
+      <Button fx:id="buttonDelete" layoutX="116.0" layoutY="224.0" mnemonicParsing="false" text="Удалить" />
+      <Label fx:id="labelId" layoutX="146.0" layoutY="13.0" text="ID:XXX" />
+    </children>
+</AnchorPane>

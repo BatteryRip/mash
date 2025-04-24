@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="214.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.ChangeTeachersController">
+    <children>
+        <TextField fx:id="fieldSurname" layoutX="25.0" layoutY="38.0" />
+        <Label layoutX="25.0" layoutY="21.0" text="Фамилия" />
+        <TextField fx:id="fieldName" layoutX="25.0" layoutY="86.0" />
+        <Label layoutX="25.0" layoutY="69.0" text="Имя" />
+        <TextField fx:id="fieldPatronym" layoutX="25.0" layoutY="134.0" />
+        <Label layoutX="25.0" layoutY="117.0" text="Отчество" />
+        <Button fx:id="buttonAdd" layoutX="65.0" layoutY="174.0" mnemonicParsing="false" text="Добавить" />
+    </children>
+</AnchorPane>

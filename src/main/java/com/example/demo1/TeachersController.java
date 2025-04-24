@@ -20,9 +20,6 @@ public class TeachersController {
     private Button buttonAdd;
 
     @FXML
-    private Button buttonCategories;
-
-    @FXML
     private Button buttonChange;
 
     @FXML
@@ -49,7 +46,6 @@ public class TeachersController {
     @FXML
     void initialize() {
         assert buttonAdd != null : "fx:id=\"buttonAdd\" was not injected: check your FXML file 'teachers.fxml'.";
-        assert buttonCategories != null : "fx:id=\"buttonCategories\" was not injected: check your FXML file 'teachers.fxml'.";
         assert buttonChange != null : "fx:id=\"buttonChange\" was not injected: check your FXML file 'teachers.fxml'.";
         assert buttonSearch != null : "fx:id=\"buttonSearch\" was not injected: check your FXML file 'teachers.fxml'.";
         assert fieldSearch != null : "fx:id=\"fieldSearch\" was not injected: check your FXML file 'teachers.fxml'.";

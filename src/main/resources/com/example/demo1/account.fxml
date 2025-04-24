@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="275.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.AccountController">
+   <children>
+      <Label fx:id="labelLogin" layoutX="14.0" layoutY="73.0" text="Логин" />
+      <Label fx:id="labelId" layoutX="13.0" layoutY="56.0" text="ID:XXX" />
+      <Label fx:id="labelName" layoutX="14.0" layoutY="177.0" text="Фамилия Имя Отчество" />
+      <Label fx:id="labelStatus" layoutX="14.0" layoutY="160.0" text="Ученик группы Название/Преподаватель/Куратор группы Название" />
+      <Label fx:id="labelAdmin" layoutX="13.0" layoutY="90.0" text="Пользователь/Администратор" />
+      <Label layoutX="14.0" layoutY="133.0" text="Привязанные данные:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="13.0" layoutY="29.0" text="Информация об аккаунте:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="buttonDelete" layoutX="13.0" layoutY="230.0" mnemonicParsing="false" text="Удаление аккаунта" />
+   </children>
+</AnchorPane>
