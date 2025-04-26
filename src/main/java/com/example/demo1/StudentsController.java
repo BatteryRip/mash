@@ -52,18 +52,12 @@ public class StudentsController {
 
     @FXML
     void initialize() {
-        assert buttonAdd != null : "fx:id=\"buttonAdd\" was not injected: check your FXML file 'students.fxml'.";
-        assert buttonChange != null : "fx:id=\"buttonChange\" was not injected: check your FXML file 'students.fxml'.";
-        assert buttonSearch != null : "fx:id=\"buttonSearch\" was not injected: check your FXML file 'students.fxml'.";
-        assert fieldGroup != null : "fx:id=\"fieldGroup\" was not injected: check your FXML file 'students.fxml'.";
-        assert fieldSearch != null : "fx:id=\"fieldSearch\" was not injected: check your FXML file 'students.fxml'.";
-        assert table != null : "fx:id=\"table\" was not injected: check your FXML file 'students.fxml'.";
-        assert tableId != null : "fx:id=\"tableId\" was not injected: check your FXML file 'students.fxml'.";
-        assert tableName != null : "fx:id=\"tableName\" was not injected: check your FXML file 'students.fxml'.";
-        assert tableName1 != null : "fx:id=\"tableName1\" was not injected: check your FXML file 'students.fxml'.";
-        assert tableName2 != null : "fx:id=\"tableName2\" was not injected: check your FXML file 'students.fxml'.";
-        assert tableName3 != null : "fx:id=\"tableName3\" was not injected: check your FXML file 'students.fxml'.";
-
+        buttonAdd.setOnAction(event -> {
+            General.page("add-students.fxml", 200, 263, "Добавить");
+        });
+        buttonChange.setOnAction(event -> {
+            General.page("change-students.fxml", 200, 263, "Изменить");
+        });
     }
 
 }

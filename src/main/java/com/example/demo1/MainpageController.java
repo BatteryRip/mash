@@ -30,6 +30,9 @@ public class MainpageController {
 
     @FXML
     void initialize() {
+        buttonAccount.setOnAction(event -> {
+            General.page("account.fxml", 400, 275, "Аккаунт");
+        });
         buttonGroups.setOnAction(event -> {
             General.page("groups.fxml", 1200, 800, "Учебные группы");
         });

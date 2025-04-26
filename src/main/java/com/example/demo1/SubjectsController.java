@@ -39,14 +39,12 @@ public class SubjectsController {
 
     @FXML
     void initialize() {
-        assert buttonAdd != null : "fx:id=\"buttonAdd\" was not injected: check your FXML file 'subjects.fxml'.";
-        assert buttonChange != null : "fx:id=\"buttonChange\" was not injected: check your FXML file 'subjects.fxml'.";
-        assert buttonSearch != null : "fx:id=\"buttonSearch\" was not injected: check your FXML file 'subjects.fxml'.";
-        assert fieldSearch != null : "fx:id=\"fieldSearch\" was not injected: check your FXML file 'subjects.fxml'.";
-        assert table != null : "fx:id=\"table\" was not injected: check your FXML file 'subjects.fxml'.";
-        assert tableId != null : "fx:id=\"tableId\" was not injected: check your FXML file 'subjects.fxml'.";
-        assert tableName != null : "fx:id=\"tableName\" was not injected: check your FXML file 'subjects.fxml'.";
-
+        buttonAdd.setOnAction(event -> {
+            General.page("add-subjects.fxml", 200, 115, "Добавить");
+        });
+        buttonChange.setOnAction(event -> {
+            General.page("change-subjects.fxml", 200, 115, "Изменить");
+        });
     }
 
 }
