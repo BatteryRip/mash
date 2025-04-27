@@ -31,6 +31,8 @@ public class AuthController {
     @FXML
     void initialize() {
         loginButton.setOnAction(event -> {
+            String login = loginField.getText().trim();
+            String pass = passField.getText().trim();
             loginButton.getScene().getWindow().hide();
             General.page("mainpage.fxml", 132, 247, "Пылесос умер");
         });
