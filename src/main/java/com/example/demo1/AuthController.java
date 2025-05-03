@@ -41,6 +41,7 @@ public class AuthController {
     private void loginAccount(String login, String pass) {
         if (!list.isEmpty()) {
             Accounts account = list.get(0);
+            General.changeAccount(account);
             loginButton.getScene().getWindow().hide();
             General.page("mainpage.fxml", 132, 247, "Пылесос умер");
         }

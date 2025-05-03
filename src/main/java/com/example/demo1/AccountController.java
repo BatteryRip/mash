@@ -34,12 +34,15 @@ public class AccountController {
 
     @FXML
     void initialize() {
-        assert buttonDelete != null : "fx:id=\"buttonDelete\" was not injected: check your FXML file 'account.fxml'.";
-        assert labelAdmin != null : "fx:id=\"labelAdmin\" was not injected: check your FXML file 'account.fxml'.";
-        assert labelId != null : "fx:id=\"labelId\" was not injected: check your FXML file 'account.fxml'.";
-        assert labelLogin != null : "fx:id=\"labelLogin\" was not injected: check your FXML file 'account.fxml'.";
-        assert labelName != null : "fx:id=\"labelName\" was not injected: check your FXML file 'account.fxml'.";
-        assert labelStatus != null : "fx:id=\"labelStatus\" was not injected: check your FXML file 'account.fxml'.";
+        labelId.setText("ID:" + General.selectedAccount.getId());
+        labelLogin.setText(General.selectedAccount.getEmail());
+        if (General.selectedAccount.getAdmin().equals("0")) {
+            labelAdmin.setText("Пользователь");
+        }
+        else {
+            labelAdmin.setText("Администратор");
+        }
+        System.out.println(General.selectedAccount.getAdmin());
 
     }
 
