@@ -43,6 +43,25 @@ public class AccountController {
             labelAdmin.setText("Администратор");
         }
         System.out.println(General.selectedAccount.getAdmin());
+        if (General.relatedTeacher.getName() != null) {
+            if (General.relatedGroup.getName() != null) {
+                labelStatus.setText("Куратор группы " + General.relatedGroup.getName());
+            }
+            else {
+                labelStatus.setText("Преподаватель");
+            }
+            labelName.setText(General.relatedTeacher.getSurname() + " " + General.relatedTeacher.getName() + " " + General.relatedTeacher.getPatronym());
+        }
+        else if (General.relatedStudent.getName() != null) {
+            if (General.relatedGroup.getName() != null) {
+                labelStatus.setText("Ученик группы " + General.relatedGroup.getName());
+            }
+            labelName.setText(General.relatedStudent.getSurname() + " " + General.relatedStudent.getName() + " " + General.relatedStudent.getPatronym());
+        }
+        else {
+            labelStatus.setText("Привязка отсутствует");
+            labelName.setText("");
+        }
 
     }
 
