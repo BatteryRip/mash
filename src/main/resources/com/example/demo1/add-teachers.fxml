@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="214.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.ChangeTeachersController">
+<AnchorPane prefHeight="214.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.AddTeachersController">
     <children>
         <TextField fx:id="fieldSurname" layoutX="25.0" layoutY="38.0" />
         <Label layoutX="25.0" layoutY="21.0" text="Фамилия" />
@@ -13,7 +13,6 @@
         <Label layoutX="25.0" layoutY="69.0" text="Имя" />
         <TextField fx:id="fieldPatronym" layoutX="25.0" layoutY="134.0" />
         <Label layoutX="25.0" layoutY="117.0" text="Отчество" />
-        <Button fx:id="buttonChange" layoutX="25.0" layoutY="175.0" mnemonicParsing="false" text="Изменить" />
-      <Button fx:id="buttonDelete" layoutX="114.0" layoutY="175.0" mnemonicParsing="false" text="Удалить" />
+        <Button fx:id="buttonAdd" layoutX="65.0" layoutY="175.0" mnemonicParsing="false" text="Добавить" />
     </children>
 </AnchorPane>

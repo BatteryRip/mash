@@ -30,6 +30,10 @@ public class General {
         mpStage.setScene(mpScene);
         mpStage.show();
     }
+    public static String update(String id, String table, String column, String value) {
+        String query = "UPDATE " + table + " SET " + column + " = '" + value + "' WHERE id = " + id;
+        return query;
+    }
     public static Accounts selectedAccount = new Accounts(null, null, null, null);
     public static void changeAccount(String id, String email, String password, String admin) {
         selectedAccount.setId(id);

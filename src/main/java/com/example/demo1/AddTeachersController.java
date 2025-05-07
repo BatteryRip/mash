@@ -1,12 +1,25 @@
 package com.example.demo1;
 
 import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class AddTeachersController {
+
+    DatabaseHandler dbHandler = new DatabaseHandler();
+
+    public void addTeacherQuery() throws SQLException, ClassNotFoundException {
+        String query = "INSERT INTO teachers (surname, name, patronym) VALUES ('"
+                + fieldSurname.getText()
+                + "','" + fieldName.getText()
+                + "','" + fieldPatronym.getText() + "')";
+        PreparedStatement ps = dbHandler.getConnection().prepareStatement(query);
+        ps.executeUpdate();
+    }
 
     @FXML
     private ResourceBundle resources;
@@ -28,10 +41,15 @@ public class AddTeachersController {
 
     @FXML
     void initialize() {
-        assert buttonAdd != null : "fx:id=\"buttonAdd\" was not injected: check your FXML file 'add-teachers.fxml'.";
-        assert fieldName != null : "fx:id=\"fieldName\" was not injected: check your FXML file 'add-teachers.fxml'.";
-        assert fieldPatronym != null : "fx:id=\"fieldPatronym\" was not injected: check your FXML file 'add-teachers.fxml'.";
-        assert fieldSurname != null : "fx:id=\"fieldSurname\" was not injected: check your FXML file 'add-teachers.fxml'.";
+        buttonAdd.setOnAction(event -> {
+            try {
+                addTeacherQuery();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        });
 
     }
 

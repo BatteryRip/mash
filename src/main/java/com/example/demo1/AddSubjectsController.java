@@ -10,20 +10,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class AddSubjectsController {
-    DatabaseHandler dbHandler = new DatabaseHandler();
 
-    public int nextId() throws SQLException, ClassNotFoundException {
-        ResultSet res;
-        String query = "SELECT TOP 1 * FROM subjects ORDER BY id DESC";
-        PreparedStatement ps = dbHandler.getConnection().prepareStatement(query);
-        res = ps.executeQuery();
-        if (res.next()) {
-            int id = res.getInt("id");
-            return id + 1;
-        } else {
-            return 1;
-        }
-    }
+    DatabaseHandler dbHandler = new DatabaseHandler();
 
     public void addSubjectQuery() throws SQLException, ClassNotFoundException {
         String query = "INSERT INTO subjects (name) VALUES ('" + fieldName.getText() + "')";

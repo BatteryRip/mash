@@ -13,6 +13,8 @@
         <Label layoutX="25.0" layoutY="69.0" text="Имя" />
         <TextField fx:id="fieldPatronym" layoutX="25.0" layoutY="134.0" />
         <Label layoutX="25.0" layoutY="117.0" text="Отчество" />
-        <Button fx:id="buttonAdd" layoutX="65.0" layoutY="174.0" mnemonicParsing="false" text="Добавить" />
+        <Button fx:id="buttonChange" layoutX="25.0" layoutY="175.0" mnemonicParsing="false" text="Изменить" />
+      <Button fx:id="buttonDelete" layoutX="114.0" layoutY="175.0" mnemonicParsing="false" text="Удалить" />
+      <Label fx:id="labelId" layoutX="144.0" layoutY="13.0" text="ID:XXX" />
     </children>
 </AnchorPane>

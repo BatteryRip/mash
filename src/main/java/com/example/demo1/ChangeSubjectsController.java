@@ -13,7 +13,7 @@ public class ChangeSubjectsController {
 
     DatabaseHandler dbHandler = new DatabaseHandler();
 
-    String sId = SubjectsController.subjectsSelectedId;
+    String sId;
 
     public void changeSubjectQuery() throws SQLException, ClassNotFoundException {
         String query = "UPDATE subjects SET name ='" + fieldName.getText() + "' WHERE id='" + sId + "'";
@@ -47,7 +47,8 @@ public class ChangeSubjectsController {
 
     @FXML
     void initialize() {
-        labelId.setText("ID:" + SubjectsController.subjectsSelectedId);
+        sId = SubjectsController.subjectsSelectedId;
+        labelId.setText("ID:" + sId);
         buttonChange.setOnAction(event -> {
             try {
                 changeSubjectQuery();

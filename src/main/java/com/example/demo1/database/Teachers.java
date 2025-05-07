@@ -17,6 +17,8 @@ public class Teachers {
     private SimpleStringProperty account;
     private SimpleStringProperty info;
 
+    private SimpleStringProperty email;
+
     public Teachers(String id, String surname, String name, String patronym, String account, String info) {
         this.id = new SimpleStringProperty(id);
         this.surname = new SimpleStringProperty(surname);
@@ -24,6 +26,17 @@ public class Teachers {
         this.patronym = new SimpleStringProperty(patronym);
         this.account = new SimpleStringProperty(account);
         this.info = new SimpleStringProperty(info);
+    }
+
+    public Teachers(String id, String surname, String name, String patronym, String account, String info, String email) {
+        this.id = new SimpleStringProperty(id);
+        this.surname = new SimpleStringProperty(surname);
+        this.name = new SimpleStringProperty(name);
+        this.patronym = new SimpleStringProperty(patronym);
+        this.account = new SimpleStringProperty(account);
+        this.info = new SimpleStringProperty(info);
+
+        this.email = new SimpleStringProperty(email);
     }
 
     public String getId() {
@@ -61,5 +74,12 @@ public class Teachers {
     }
     public void setInfo(String info) {
         this.info.set(info);
+    }
+
+    public String getEmail() {
+        return email.get();
+    }
+    public void setEmail(String email) {
+        this.email.set(email);
     }
 }
