@@ -8,53 +8,50 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.SelectStudentsController">
+<AnchorPane prefHeight="800.0" prefWidth="1325.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.SelectStudentsController">
     <children>
-        <TextField fx:id="fieldSearch" layoutX="759.0" layoutY="14.0" />
-        <Label layoutX="715.0" layoutY="18.0" text="Поиск" />
-        <Button fx:id="buttonSearch" layoutX="919.0" layoutY="14.0" mnemonicParsing="false" text="Искать" />
-        <TableView fx:id="table" layoutX="14.0" layoutY="47.0" prefHeight="740.0" prefWidth="1170.0">
+        <Button fx:id="buttonSearch" layoutX="1250.0" layoutY="14.0" mnemonicParsing="false" onAction="#onSearchButtonClick" text="Искать" />
+        <TableView fx:id="table" layoutX="14.0" layoutY="47.0" prefHeight="740.0" prefWidth="1290.0">
             <columns>
                 <TableColumn fx:id="tableId" prefWidth="31.0" text="id" />
                 <TableColumn fx:id="tableName" prefWidth="295.0" text="Предмет" />
-                <TableColumn prefWidth="31.0" text="1" />
-                <TableColumn prefWidth="31.0" text="2" />
-                <TableColumn prefWidth="31.0" text="3" />
-                <TableColumn prefWidth="31.0" text="4" />
-                <TableColumn prefWidth="31.0" text="5" />
-                <TableColumn prefWidth="31.0" text="6" />
-                <TableColumn prefWidth="31.0" text="7" />
-                <TableColumn prefWidth="31.0" text="8" />
-                <TableColumn prefWidth="31.0" text="9" />
-                <TableColumn prefWidth="31.0" text="10" />
-                <TableColumn prefWidth="31.0" text="11" />
-                <TableColumn prefWidth="31.0" text="12" />
-                <TableColumn prefWidth="31.0" text="13" />
-                <TableColumn prefWidth="31.0" text="14" />
-                <TableColumn prefWidth="31.0" text="15" />
-                <TableColumn prefWidth="31.0" text="16" />
-                <TableColumn prefWidth="31.0" text="17" />
-                <TableColumn prefWidth="31.0" text="18" />
-                <TableColumn prefWidth="31.0" text="19" />
-                <TableColumn prefWidth="31.0" text="20" />
-                <TableColumn prefWidth="31.0" text="21" />
-                <TableColumn prefWidth="31.0" text="22" />
-                <TableColumn prefWidth="31.0" text="23" />
-                <TableColumn prefWidth="31.0" text="24" />
-                <TableColumn prefWidth="31.0" text="25" />
-                <TableColumn prefWidth="31.0" text="26" />
-                <TableColumn prefWidth="31.0" text="27" />
-                <TableColumn prefWidth="31.0" text="28" />
-                <TableColumn prefWidth="31.0" text="29" />
-                <TableColumn prefWidth="31.0" text="30" />
-                <TableColumn prefWidth="31.0" text="31" />
+                <TableColumn fx:id="day1" prefWidth="31.0" text="1" />
+                <TableColumn fx:id="day2" prefWidth="31.0" text="2" />
+                <TableColumn fx:id="day3" prefWidth="31.0" text="3" />
+                <TableColumn fx:id="day4" prefWidth="31.0" text="4" />
+                <TableColumn fx:id="day5" prefWidth="31.0" text="5" />
+                <TableColumn fx:id="day6" prefWidth="31.0" text="6" />
+                <TableColumn fx:id="day7" prefWidth="31.0" text="7" />
+                <TableColumn fx:id="day8" prefWidth="31.0" text="8" />
+                <TableColumn fx:id="day9" prefWidth="31.0" text="9" />
+                <TableColumn fx:id="day10" prefWidth="31.0" text="10" />
+                <TableColumn fx:id="day11" prefWidth="31.0" text="11" />
+                <TableColumn fx:id="day12" prefWidth="31.0" text="12" />
+                <TableColumn fx:id="day13" prefWidth="31.0" text="13" />
+                <TableColumn fx:id="day14" prefWidth="31.0" text="14" />
+                <TableColumn fx:id="day15" prefWidth="31.0" text="15" />
+                <TableColumn fx:id="day16" prefWidth="31.0" text="16" />
+                <TableColumn fx:id="day17" prefWidth="31.0" text="17" />
+                <TableColumn fx:id="day18" prefWidth="31.0" text="18" />
+                <TableColumn fx:id="day19" prefWidth="31.0" text="19" />
+                <TableColumn fx:id="day20" prefWidth="31.0" text="20" />
+                <TableColumn fx:id="day21" prefWidth="31.0" text="21" />
+                <TableColumn fx:id="day22" prefWidth="31.0" text="22" />
+                <TableColumn fx:id="day23" prefWidth="31.0" text="23" />
+                <TableColumn fx:id="day24" prefWidth="31.0" text="24" />
+                <TableColumn fx:id="day25" prefWidth="31.0" text="25" />
+                <TableColumn fx:id="day26" prefWidth="31.0" text="26" />
+                <TableColumn fx:id="day27" prefWidth="31.0" text="27" />
+                <TableColumn fx:id="day28" prefWidth="31.0" text="28" />
+                <TableColumn fx:id="day29" prefWidth="31.0" text="29" />
+                <TableColumn fx:id="day30" prefWidth="31.0" text="30" />
+                <TableColumn fx:id="day31" prefWidth="31.0" text="31" />
             </columns>
         </TableView>
       <Label fx:id="labelInfo" layoutX="14.0" layoutY="18.0" text="ID:XXX Фамилия Имя Отчество Группа (Аккаунт)" />
-      <Button layoutX="988.0" layoutY="14.0" mnemonicParsing="false" text="Средний балл/Итоговые оценки" />
-      <ComboBox fx:id="fieldMonth" layoutX="554.0" layoutY="14.0" prefWidth="150.0" />
-      <Label layoutX="509.0" layoutY="18.0" text="Месяц" />
-      <TextField fx:id="fieldYear" layoutX="447.0" layoutY="14.0" prefHeight="25.0" prefWidth="54.0" />
-      <Label layoutX="418.0" layoutY="18.0" text="Год" />
+      <ComboBox fx:id="fieldMonth" layoutX="1088.0" layoutY="14.0" prefWidth="150.0" />
+      <Label layoutX="1043.0" layoutY="18.0" text="Месяц" />
+      <TextField fx:id="fieldYear" layoutX="981.0" layoutY="14.0" prefHeight="25.0" prefWidth="54.0" />
+      <Label layoutX="952.0" layoutY="18.0" text="Год" />
     </children>
 </AnchorPane>

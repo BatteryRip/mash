@@ -124,7 +124,8 @@ public class StudentsController {
             General.page("change-students.fxml", 200, 263, "Изменить");
         });
         buttonSelect.setOnAction(event -> {
-            General.page("select-students.fxml", 1200, 800, "мазь от геморроя");
+            defineStudentsSelectedId();
+            General.page("select-students.fxml", 1325, 800, "мазь от геморроя");
         });
         buttonSearch.setOnAction(event -> {
             try {
