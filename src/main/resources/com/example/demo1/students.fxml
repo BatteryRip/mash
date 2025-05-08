@@ -18,13 +18,13 @@
         <TableView fx:id="table" layoutX="14.0" layoutY="47.0" prefHeight="740.0" prefWidth="790.0">
             <columns>
                 <TableColumn fx:id="tableId" prefWidth="31.0" text="id" />
-                <TableColumn fx:id="tableName" prefWidth="189.0" text="Фамилия" />
-            <TableColumn fx:id="tableName1" prefWidth="189.0" text="Имя" />
-            <TableColumn fx:id="tableName2" prefWidth="189.0" text="Отчество" />
-            <TableColumn fx:id="tableName3" prefWidth="189.0" text="Группа" />
+                <TableColumn fx:id="tableSurname" prefWidth="189.0" text="Фамилия" />
+            <TableColumn fx:id="tableName" prefWidth="189.0" text="Имя" />
+            <TableColumn fx:id="tablePatronym" prefWidth="189.0" text="Отчество" />
+            <TableColumn fx:id="tableGroup" prefWidth="189.0" text="Группа" />
             </columns>
         </TableView>
-      <Button layoutX="741.0" layoutY="14.0" mnemonicParsing="false" text="Выбрать" />
+      <Button fx:id="buttonSelect" layoutX="741.0" layoutY="14.0" mnemonicParsing="false" text="Выбрать" />
       <ComboBox fx:id="fieldGroup" layoutX="563.0" layoutY="14.0" prefWidth="150.0" />
       <Label layoutX="515.0" layoutY="18.0" text="Группа" />
     </children>

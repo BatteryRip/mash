@@ -1,6 +1,7 @@
 package com.example.demo1.database;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 public class Students {
     private static final String ID = "id";
@@ -17,6 +18,8 @@ public class Students {
     private SimpleStringProperty sgroup;
     private SimpleStringProperty account;
 
+    private SimpleStringProperty sgroupName;
+
     public Students(String id, String surname, String name, String patronym, String sgroup, String account) {
         this.id = new SimpleStringProperty(id);
         this.surname = new SimpleStringProperty(surname);
@@ -24,6 +27,17 @@ public class Students {
         this.patronym = new SimpleStringProperty(patronym);
         this.sgroup = new SimpleStringProperty(sgroup);
         this.account = new SimpleStringProperty(account);
+    }
+
+    public Students(String id, String surname, String name, String patronym, String sgroup, String account, String sgroupName) {
+        this.id = new SimpleStringProperty(id);
+        this.surname = new SimpleStringProperty(surname);
+        this.name = new SimpleStringProperty(name);
+        this.patronym = new SimpleStringProperty(patronym);
+        this.sgroup = new SimpleStringProperty(sgroup);
+        this.account = new SimpleStringProperty(account);
+
+        this.sgroupName = new SimpleStringProperty(sgroupName);
     }
 
     public String getId() {
@@ -61,5 +75,12 @@ public class Students {
     }
     public void setAccount(String account) {
         this.account.set(account);
+    }
+
+    public void setSgroupName(String sgroupName) {
+        this.sgroupName.set(sgroupName);
+    }
+    public String getSgroupName() {
+        return sgroupName.get();
     }
 }
