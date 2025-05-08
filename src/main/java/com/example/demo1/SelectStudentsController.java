@@ -28,6 +28,9 @@ public class SelectStudentsController {
     private TextField fieldSearch;
 
     @FXML
+    private TextField fieldYear;
+
+    @FXML
     private Label labelInfo;
 
     @FXML
@@ -44,6 +47,7 @@ public class SelectStudentsController {
         assert buttonSearch != null : "fx:id=\"buttonSearch\" was not injected: check your FXML file 'select-students.fxml'.";
         assert fieldMonth != null : "fx:id=\"fieldMonth\" was not injected: check your FXML file 'select-students.fxml'.";
         assert fieldSearch != null : "fx:id=\"fieldSearch\" was not injected: check your FXML file 'select-students.fxml'.";
+        assert fieldYear != null : "fx:id=\"fieldYear\" was not injected: check your FXML file 'select-students.fxml'.";
         assert labelInfo != null : "fx:id=\"labelInfo\" was not injected: check your FXML file 'select-students.fxml'.";
         assert table != null : "fx:id=\"table\" was not injected: check your FXML file 'select-students.fxml'.";
         assert tableId != null : "fx:id=\"tableId\" was not injected: check your FXML file 'select-students.fxml'.";

@@ -54,5 +54,7 @@
       <Button layoutX="988.0" layoutY="14.0" mnemonicParsing="false" text="Средний балл/Итоговые оценки" />
       <ComboBox fx:id="fieldMonth" layoutX="554.0" layoutY="14.0" prefWidth="150.0" />
       <Label layoutX="509.0" layoutY="18.0" text="Месяц" />
+      <TextField fx:id="fieldYear" layoutX="447.0" layoutY="14.0" prefHeight="25.0" prefWidth="54.0" />
+      <Label layoutX="418.0" layoutY="18.0" text="Год" />
     </children>
 </AnchorPane>
