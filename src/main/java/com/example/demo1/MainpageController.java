@@ -34,7 +34,7 @@ public class MainpageController {
             General.page("account.fxml", 400, 275, "Аккаунт");
         });
         buttonGroups.setOnAction(event -> {
-            General.page("groups.fxml", 1200, 800, "Учебные группы");
+            General.page("groups.fxml", 870, 800, "Учебные группы");
         });
         buttonSubjects.setOnAction(event -> {
             General.page("subjects.fxml", 1200, 800, "Предметы");

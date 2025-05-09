@@ -30,24 +30,7 @@ public class StudentsController {
     ObservableList<Students> list = FXCollections.observableArrayList();
     ObservableList<Groups> gList = FXCollections.observableArrayList();
 
-    private void loadGroups() throws SQLException, ClassNotFoundException {
-        ResultSet res = null;
-        String query = "SELECT * FROM groups";
-        PreparedStatement ps = dbHandler.getConnection().prepareStatement(query);
-        res = ps.executeQuery();
-        gList.clear();
-        while (res.next()) {
-            gList.add(new Groups(
-                    res.getString("id"),
-                    res.getString("name"),
-                    res.getString("teacher"),
-                    res.getString("leader")
-            ));
-        }
-        fieldGroup.setItems(gList);
-    }
-
-    public void studentsQuery(String name) throws SQLException, ClassNotFoundException {
+    private void studentsQuery(String name) throws SQLException, ClassNotFoundException {
         ResultSet res = null;
         String query = "SELECT s.*, g.name FROM students s " +
                 "LEFT JOIN groups g ON s.sgroup = g.id " +
@@ -87,9 +70,6 @@ public class StudentsController {
     private Button buttonSelect;
 
     @FXML
-    private ComboBox<Groups> fieldGroup;
-
-    @FXML
     private TextField fieldSearch;
 
     @FXML
@@ -121,6 +101,7 @@ public class StudentsController {
             General.page("add-students.fxml", 200, 263, "Добавить");
         });
         buttonChange.setOnAction(event -> {
+            defineStudentsSelectedId();
             General.page("change-students.fxml", 200, 263, "Изменить");
         });
         buttonSelect.setOnAction(event -> {

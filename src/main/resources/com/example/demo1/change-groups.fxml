@@ -5,12 +5,16 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="115.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.ChangeGroupsController">
+<AnchorPane prefHeight="230.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.ChangeGroupsController">
     <children>
         <TextField fx:id="fieldName" layoutX="25.0" layoutY="38.0" />
         <Label layoutX="25.0" layoutY="21.0" text="Название" />
-        <Button fx:id="buttonChange" layoutX="25.0" layoutY="76.0" mnemonicParsing="false" text="Изменить" />
-        <Button fx:id="buttonDelete" layoutX="114.0" layoutY="76.0" mnemonicParsing="false" text="Удалить" />
-        <Label fx:id="labelId" layoutX="138.0" layoutY="13.0" text="ID:XXX" />
+        <Button fx:id="buttonChange" layoutX="27.0" layoutY="191.0" mnemonicParsing="false" text="Изменить" />
+        <TextField fx:id="fieldTeacher" layoutX="26.0" layoutY="89.0" />
+        <Label layoutX="26.0" layoutY="72.0" text="Руководитель (ID)" />
+        <TextField fx:id="fieldLeader" layoutX="26.0" layoutY="140.0" />
+        <Label layoutX="26.0" layoutY="123.0" text="Староста (ID)" />
+      <Button fx:id="buttonDelete" layoutX="115.0" layoutY="191.0" mnemonicParsing="false" text="Удалить" />
+      <Label fx:id="labelId" layoutX="147.0" layoutY="13.0" text="ID:XXX" />
     </children>
 </AnchorPane>

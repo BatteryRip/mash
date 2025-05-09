@@ -1,6 +1,8 @@
 package com.example.demo1;
 
 import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -8,6 +10,18 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
 public class AddStudentsController {
+
+    DatabaseHandler dbHandler = new DatabaseHandler();
+
+    private void addStudentQuery() throws SQLException, ClassNotFoundException {
+        String query = "INSERT INTO students (surname, name, patronym, sgroup) VALUES ('"
+                + fieldSurname.getText()
+                + "','" + fieldName.getText()
+                + "','" + fieldPatronym.getText()
+                + "','" + fieldGroup.getText()+ "')";
+        PreparedStatement ps = dbHandler.getConnection().prepareStatement(query);
+        ps.executeUpdate();
+    }
 
     @FXML
     private ResourceBundle resources;
@@ -19,7 +33,7 @@ public class AddStudentsController {
     private Button buttonAdd;
 
     @FXML
-    private ComboBox<?> fieldGroup;
+    private TextField fieldGroup;
 
     @FXML
     private TextField fieldName;
@@ -32,11 +46,15 @@ public class AddStudentsController {
 
     @FXML
     void initialize() {
-        assert buttonAdd != null : "fx:id=\"buttonAdd\" was not injected: check your FXML file 'add-students.fxml'.";
-        assert fieldGroup != null : "fx:id=\"fieldGroup\" was not injected: check your FXML file 'add-students.fxml'.";
-        assert fieldName != null : "fx:id=\"fieldName\" was not injected: check your FXML file 'add-students.fxml'.";
-        assert fieldPatronym != null : "fx:id=\"fieldPatronym\" was not injected: check your FXML file 'add-students.fxml'.";
-        assert fieldSurname != null : "fx:id=\"fieldSurname\" was not injected: check your FXML file 'add-students.fxml'.";
+        buttonAdd.setOnAction(event -> {
+            try {
+                addStudentQuery();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        });
 
     }
 

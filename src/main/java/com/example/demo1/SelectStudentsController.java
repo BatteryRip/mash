@@ -21,7 +21,7 @@ import javafx.scene.control.TextField;
 
 public class SelectStudentsController {
 
-    String sId;
+    protected static String sId;
 
     DatabaseHandler dbHandler = new DatabaseHandler();
 
@@ -63,10 +63,17 @@ public class SelectStudentsController {
 
     private ObservableList<Tablegrades> gradesList = FXCollections.observableArrayList();
     private void loadGrades(String studentId, String month, String year) throws SQLException, ClassNotFoundException {
-        String query = "SELECT subject, day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, " +
-                "day11, day12, day13, day14, day15, day16, day17, day18, day19, day20, " +
-                "day21, day22, day23, day24, day25, day26, day27, day28, day29, day30, day31 " +
-                "FROM tablegrades WHERE student = ? AND month = ? AND year = ?";
+//        String query = "SELECT subject, day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, " +
+//                "day11, day12, day13, day14, day15, day16, day17, day18, day19, day20, " +
+//                "day21, day22, day23, day24, day25, day26, day27, day28, day29, day30, day31 " +
+//                "FROM tablegrades WHERE student = ? AND month = ? AND year = ?";
+        String query = "SELECT tg.subject AS subject, s.name AS subjectName, " +
+                "tg.day1, tg.day2, tg.day3, tg.day4, tg.day5, tg.day6, tg.day7, tg.day8, tg.day9, tg.day10, " +
+                "tg.day11, tg.day12, tg.day13, tg.day14, tg.day15, tg.day16, tg.day17, tg.day18, tg.day19, tg.day20, " +
+                "tg.day21, tg.day22, tg.day23, tg.day24, tg.day25, tg.day26, tg.day27, tg.day28, tg.day29, tg.day30, tg.day31 " +
+                "FROM tablegrades tg " +
+                "JOIN subjects s ON tg.subject = s.id " +
+                "WHERE tg.student = ? AND tg.month = ? AND tg.year = ?";
 
         PreparedStatement ps = dbHandler.getConnection().prepareStatement(query);
         ps.setString(1, studentId);
@@ -76,7 +83,8 @@ public class SelectStudentsController {
         gradesList.clear();
         while (rs.next()) {
             String subject = rs.getString("subject");
-            Tablegrades tableGrade = new Tablegrades(studentId, subject, year, month);
+            String subjectName = rs.getString("subjectName");
+            Tablegrades tableGrade = new Tablegrades(studentId, subject, year, month, subjectName);
 
             for (int day = 1; day <= 31; day++) {
                 String grade = rs.getString("day" + day);
@@ -93,6 +101,9 @@ public class SelectStudentsController {
 
     @FXML
     private URL location;
+
+    @FXML
+    private Button buttonGrade;
 
     @FXML
     private Button buttonSearch;
@@ -211,12 +222,17 @@ public class SelectStudentsController {
     @FXML
     void initialize() {
         sId = StudentsController.studentsSelectedId;
+
+        buttonGrade.setOnAction(event -> {
+            General.page("add-select-students.fxml", 283, 174, "Добавление оценки для ID:" + sId);
+        });
+
         try {
             loadStudentInfo(sId);
             loadMonths();
 
-            tableId.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getStudent()));
-            tableName.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getSubject()));
+            tableId.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getSubject()));
+            tableName.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getSubjectName()));
 
             day1.setCellValueFactory(cellData -> cellData.getValue().getGrade(1));
             day2.setCellValueFactory(cellData -> cellData.getValue().getGrade(2));

@@ -30,7 +30,7 @@ public class TeachersController {
     ObservableList<Teachers> list = FXCollections.observableArrayList();
     ObservableList<Accounts> list1 = FXCollections.observableArrayList();
 //    String tEmail;
-    public void teachersQuery(String name) throws SQLException, ClassNotFoundException {
+    private void teachersQuery(String name) throws SQLException, ClassNotFoundException {
         ResultSet res = null;
         String query = "SELECT t.*, a.email FROM teachers t " +
                 "LEFT JOIN accounts a ON t.account = a.id " +

@@ -12,7 +12,7 @@ public class AddTeachersController {
 
     DatabaseHandler dbHandler = new DatabaseHandler();
 
-    public void addTeacherQuery() throws SQLException, ClassNotFoundException {
+    private void addTeacherQuery() throws SQLException, ClassNotFoundException {
         String query = "INSERT INTO teachers (surname, name, patronym) VALUES ('"
                 + fieldSurname.getText()
                 + "','" + fieldName.getText()

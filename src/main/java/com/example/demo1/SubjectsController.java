@@ -27,7 +27,7 @@ public class SubjectsController {
 
     DatabaseHandler dbHandler = new DatabaseHandler();
     ObservableList<Subjects> list = FXCollections.observableArrayList();
-    public void subjectsQuery(String name) throws SQLException, ClassNotFoundException {
+    private void subjectsQuery(String name) throws SQLException, ClassNotFoundException {
         ResultSet res = null;
         String query = "SELECT * FROM subjects WHERE name LIKE '%" + name + "%'";
         PreparedStatement ps = dbHandler.getConnection().prepareStatement(query);

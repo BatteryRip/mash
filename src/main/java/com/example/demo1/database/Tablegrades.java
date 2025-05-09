@@ -9,12 +9,24 @@ public class Tablegrades {
     private SimpleStringProperty month;
     private SimpleStringProperty[] grades;
 
+    private SimpleStringProperty subjectName;
+
     public Tablegrades(String student, String subject, String year, String month) {
         this.student = new SimpleStringProperty(student);
         this.subject = new SimpleStringProperty(subject);
         this.year = new SimpleStringProperty(year);
         this.month = new SimpleStringProperty(month);
         this.grades = new SimpleStringProperty[31];
+    }
+
+    public Tablegrades(String student, String subject, String year, String month, String subjectName) {
+        this.student = new SimpleStringProperty(student);
+        this.subject = new SimpleStringProperty(subject);
+        this.year = new SimpleStringProperty(year);
+        this.month = new SimpleStringProperty(month);
+        this.grades = new SimpleStringProperty[31];
+
+        this.subjectName = new SimpleStringProperty(subjectName);
     }
 
     public String getStudent() {
@@ -52,5 +64,12 @@ public class Tablegrades {
             throw new IllegalArgumentException("Day must be between 1 and 31");
         }
         grades[day - 1] = grade; // Устанавливаем оценку за день
+    }
+
+    public String getSubjectName() {
+        return subjectName.get();
+    }
+    public void setSubjectName(String subjectName) {
+        this.subjectName.set(subjectName);
     }
 }

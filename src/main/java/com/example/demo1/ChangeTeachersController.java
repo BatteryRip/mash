@@ -16,7 +16,7 @@ public class ChangeTeachersController {
 
     String sId;
 
-    public void changeTeachersQuery() throws SQLException, ClassNotFoundException {
+    private void changeTeachersQuery() throws SQLException, ClassNotFoundException {
         String query = General.update(sId, "teachers", "surname", fieldSurname.getText()) +
                 General.update(sId, "teachers", "name", fieldName.getText()) +
                 General.update(sId, "teachers", "patronym", fieldPatronym.getText());
@@ -24,7 +24,7 @@ public class ChangeTeachersController {
         ps.executeUpdate();
     }
 
-    public void deleteTeachersQuery() throws SQLException, ClassNotFoundException {
+    private void deleteTeachersQuery() throws SQLException, ClassNotFoundException {
         String query = "DELETE FROM teachers WHERE id = '" + sId + "'";
         PreparedStatement ps = dbHandler.getConnection().prepareStatement(query);
         ps.executeUpdate();

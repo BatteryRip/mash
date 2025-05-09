@@ -15,13 +15,13 @@ public class ChangeSubjectsController {
 
     String sId;
 
-    public void changeSubjectQuery() throws SQLException, ClassNotFoundException {
+    private void changeSubjectQuery() throws SQLException, ClassNotFoundException {
         String query = "UPDATE subjects SET name ='" + fieldName.getText() + "' WHERE id='" + sId + "'";
         PreparedStatement ps = dbHandler.getConnection().prepareStatement(query);
         ps.executeUpdate();
     }
 
-    public void deleteSubjectQuery() throws SQLException, ClassNotFoundException {
+    private void deleteSubjectQuery() throws SQLException, ClassNotFoundException {
         String query = "DELETE FROM subjects WHERE id='" + sId + "'";
         PreparedStatement ps = dbHandler.getConnection().prepareStatement(query);
         ps.executeUpdate();

@@ -1,6 +1,8 @@
 package com.example.demo1;
 
 import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -8,6 +10,24 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class ChangeGroupsController {
+
+    DatabaseHandler dbHandler = new DatabaseHandler();
+
+    String sId;
+
+    private void changeGroupsQuery() throws SQLException, ClassNotFoundException {
+        String query = General.update(sId, "groups", "name", fieldName.getText()) +
+                General.update(sId, "groups", "teacher", fieldTeacher.getText()) +
+                General.update(sId, "groups", "leader", fieldLeader.getText());
+        PreparedStatement ps = dbHandler.getConnection().prepareStatement(query);
+        ps.executeUpdate();
+    }
+
+    private void deleteGroupsQuery() throws SQLException, ClassNotFoundException {
+        String query = "DELETE FROM groups WHERE id = '" + sId + "'";
+        PreparedStatement ps = dbHandler.getConnection().prepareStatement(query);
+        ps.executeUpdate();
+    }
 
     @FXML
     private ResourceBundle resources;
@@ -22,17 +42,39 @@ public class ChangeGroupsController {
     private Button buttonDelete;
 
     @FXML
+    private TextField fieldLeader;
+
+    @FXML
     private TextField fieldName;
+
+    @FXML
+    private TextField fieldTeacher;
 
     @FXML
     private Label labelId;
 
     @FXML
     void initialize() {
-        assert buttonChange != null : "fx:id=\"buttonChange\" was not injected: check your FXML file 'change-groups.fxml'.";
-        assert buttonDelete != null : "fx:id=\"buttonDelete\" was not injected: check your FXML file 'change-groups.fxml'.";
-        assert fieldName != null : "fx:id=\"fieldName\" was not injected: check your FXML file 'change-groups.fxml'.";
-        assert labelId != null : "fx:id=\"labelId\" was not injected: check your FXML file 'change-groups.fxml'.";
+        sId = GroupsController.groupsSelectedId;
+        labelId.setText("ID:" + sId);
+        buttonChange.setOnAction(event -> {
+            try {
+                changeGroupsQuery();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        buttonDelete.setOnAction(event -> {
+            try {
+                deleteGroupsQuery();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        });
 
     }
 

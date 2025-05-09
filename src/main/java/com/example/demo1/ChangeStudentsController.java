@@ -1,6 +1,8 @@
 package com.example.demo1;
 
 import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,6 +11,25 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class ChangeStudentsController {
+
+    DatabaseHandler dbHandler = new DatabaseHandler();
+
+    String sId;
+
+    private void changeStudentsQuery() throws SQLException, ClassNotFoundException {
+        String query = General.update(sId, "students", "surname", fieldSurname.getText()) +
+                General.update(sId, "students", "name", fieldName.getText()) +
+                General.update(sId, "students", "patronym", fieldPatronym.getText()) +
+                General.update(sId, "students", "sgroup", fieldGroup.getText());
+        PreparedStatement ps = dbHandler.getConnection().prepareStatement(query);
+        ps.executeUpdate();
+    }
+
+    private void deleteStudentsQuery() throws SQLException, ClassNotFoundException {
+        String query = "DELETE FROM students WHERE id = '" + sId + "'";
+        PreparedStatement ps = dbHandler.getConnection().prepareStatement(query);
+        ps.executeUpdate();
+    }
 
     @FXML
     private ResourceBundle resources;
@@ -23,7 +44,7 @@ public class ChangeStudentsController {
     private Button buttonDelete;
 
     @FXML
-    private ComboBox<?> fieldGroup;
+    private TextField fieldGroup;
 
     @FXML
     private TextField fieldName;
@@ -39,13 +60,26 @@ public class ChangeStudentsController {
 
     @FXML
     void initialize() {
-        assert buttonChange != null : "fx:id=\"buttonChange\" was not injected: check your FXML file 'change-students.fxml'.";
-        assert buttonDelete != null : "fx:id=\"buttonDelete\" was not injected: check your FXML file 'change-students.fxml'.";
-        assert fieldGroup != null : "fx:id=\"fieldGroup\" was not injected: check your FXML file 'change-students.fxml'.";
-        assert fieldName != null : "fx:id=\"fieldName\" was not injected: check your FXML file 'change-students.fxml'.";
-        assert fieldPatronym != null : "fx:id=\"fieldPatronym\" was not injected: check your FXML file 'change-students.fxml'.";
-        assert fieldSurname != null : "fx:id=\"fieldSurname\" was not injected: check your FXML file 'change-students.fxml'.";
-        assert labelId != null : "fx:id=\"labelId\" was not injected: check your FXML file 'change-students.fxml'.";
+        sId = StudentsController.studentsSelectedId;
+        labelId.setText("ID:" + sId);
+        buttonChange.setOnAction(event -> {
+            try {
+                changeStudentsQuery();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        buttonDelete.setOnAction(event -> {
+            try {
+                deleteStudentsQuery();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        });
 
     }
 

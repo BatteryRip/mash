@@ -13,7 +13,7 @@ public class AddSubjectsController {
 
     DatabaseHandler dbHandler = new DatabaseHandler();
 
-    public void addSubjectQuery() throws SQLException, ClassNotFoundException {
+    private void addSubjectQuery() throws SQLException, ClassNotFoundException {
         String query = "INSERT INTO subjects (name) VALUES ('" + fieldName.getText() + "')";
         PreparedStatement ps = dbHandler.getConnection().prepareStatement(query);
         ps.executeUpdate();
