@@ -224,7 +224,12 @@ public class SelectStudentsController {
         sId = StudentsController.studentsSelectedId;
 
         buttonGrade.setOnAction(event -> {
-            General.page("add-select-students.fxml", 283, 174, "Добавление оценки для ID:" + sId);
+            if (General.selectedAccount.getAdmin().equals("1")) {
+                General.page("add-select-students.fxml", 283, 174, "Добавление оценки для ID:" + sId);
+            }
+            else {
+                General.page("warn-permissions.fxml", 190, 65, "Ошибка");
+            }
         });
 
         try {

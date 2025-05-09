@@ -98,15 +98,25 @@ public class StudentsController {
         tablePatronym.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getPatronym()));
         tableGroup.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getSgroupName()));
         buttonAdd.setOnAction(event -> {
-            General.page("add-students.fxml", 200, 263, "Добавить");
+            if (General.selectedAccount.getAdmin().equals("1")) {
+                General.page("add-students.fxml", 200, 263, "Добавить");
+            }
+            else {
+                General.page("warn-permissions.fxml", 190, 65, "Ошибка");
+            }
         });
         buttonChange.setOnAction(event -> {
-            defineStudentsSelectedId();
-            General.page("change-students.fxml", 200, 263, "Изменить");
+            if (General.selectedAccount.getAdmin().equals("1")) {
+                defineStudentsSelectedId();
+                General.page("change-students.fxml", 200, 263, "Изменить");
+            }
+            else {
+                General.page("warn-permissions.fxml", 190, 65, "Ошибка");
+            }
         });
         buttonSelect.setOnAction(event -> {
             defineStudentsSelectedId();
-            General.page("select-students.fxml", 1325, 800, "мазь от геморроя");
+            General.page("select-students.fxml", 1325, 800, "Оценки студента");
         });
         buttonSearch.setOnAction(event -> {
             try {

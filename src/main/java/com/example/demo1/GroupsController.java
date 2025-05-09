@@ -90,11 +90,21 @@ public class GroupsController {
         tableName.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getName()));
         tableTeacher.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTeacherName()));
         buttonAdd.setOnAction(event -> {
-            General.page("add-groups.fxml", 200, 230, "Добавить");
+            if (General.selectedAccount.getAdmin().equals("1")) {
+                General.page("add-groups.fxml", 200, 230, "Добавить");
+            }
+            else {
+                General.page("warn-permissions.fxml", 190, 65, "Ошибка");
+            }
         });
         buttonChange.setOnAction(event -> {
-            defineGroupsSelectedId();
-            General.page("change-groups.fxml", 200, 230, "Изменить");
+            if (General.selectedAccount.getAdmin().equals("1")) {
+                defineGroupsSelectedId();
+                General.page("change-groups.fxml", 200, 230, "Изменить");
+            }
+            else {
+                General.page("warn-permissions.fxml", 190, 65, "Ошибка");
+            }
         });
         buttonSearch.setOnAction(event -> {
             try {

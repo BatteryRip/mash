@@ -73,11 +73,21 @@ public class SubjectsController {
         tableId.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getId()));
         tableName.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getName()));
         buttonAdd.setOnAction(event -> {
-            General.page("add-subjects.fxml", 200, 115, "Добавить");
+            if (General.selectedAccount.getAdmin().equals("1")) {
+                General.page("add-subjects.fxml", 200, 115, "Добавить");
+            }
+            else {
+                General.page("warn-permissions.fxml", 190, 65, "Ошибка");
+            }
         });
         buttonChange.setOnAction(event -> {
-            defineSubjectsSelectedId();
-            General.page("change-subjects.fxml", 200, 115, "Изменить");
+            if (General.selectedAccount.getAdmin().equals("1")) {
+                defineSubjectsSelectedId();
+                General.page("change-subjects.fxml", 200, 115, "Изменить");
+            }
+            else {
+                General.page("warn-permissions.fxml", 190, 65, "Ошибка");
+            }
         });
         buttonSearch.setOnAction(event -> {
             try {

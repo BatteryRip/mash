@@ -95,11 +95,21 @@ public class TeachersController {
         tableAccount.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEmail()));
         tableInfo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getInfo()));
         buttonAdd.setOnAction(event -> {
-            General.page("add-teachers.fxml", 200, 214, "Добавить");
+            if (General.selectedAccount.getAdmin().equals("1")) {
+                General.page("add-teachers.fxml", 200, 214, "Добавить");
+            }
+            else {
+                General.page("warn-permissions.fxml", 190, 65, "Ошибка");
+            }
         });
         buttonChange.setOnAction(event -> {
-            defineTeachersSelectedId();
-            General.page("change-teachers.fxml", 200, 214, "Изменить");
+            if (General.selectedAccount.getAdmin().equals("1")) {
+                defineTeachersSelectedId();
+                General.page("change-teachers.fxml", 200, 214, "Изменить");
+            }
+            else {
+                General.page("warn-permissions.fxml", 190, 65, "Ошибка");
+            }
         });
         buttonSearch.setOnAction(event -> {
             try {
