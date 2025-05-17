@@ -49,15 +49,11 @@ public class SelectStudentsController {
     }
 
     private void loadMonths() throws SQLException, ClassNotFoundException {
-        String query = "SELECT name FROM months";
-        PreparedStatement ps = dbHandler.getConnection().prepareStatement(query);
-        ResultSet rs = ps.executeQuery();
-        ObservableList<Months> monthsList = FXCollections.observableArrayList();
-        while (rs.next()) {
-            String monthName = rs.getString("name");
-            monthsList.add(new Months(monthName));
+        String[] months = {"Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+                "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"};
+        for (String month : months) {
+            fieldMonth.getItems().add(month);
         }
-        fieldMonth.setItems(monthsList);
     }
 
 
@@ -202,7 +198,7 @@ public class SelectStudentsController {
     private TableColumn<Tablegrades, String> day9;
 
     @FXML
-    private ComboBox<Months> fieldMonth;
+    private ComboBox<String> fieldMonth;
 
     @FXML
     private TextField fieldYear;
@@ -280,8 +276,7 @@ public class SelectStudentsController {
 
     @FXML
     void onSearchButtonClick() {
-        Months selectedMonth = (Months) fieldMonth.getValue();
-        String month = selectedMonth != null ? selectedMonth.getName() : null;
+        String month = fieldMonth.getValue();
         String year = fieldYear.getText();
         if (month == null || year.isEmpty()) {
             return;

@@ -168,16 +168,12 @@ public class AuthController {
                 }
                 groupInfoLoading();
                 loginButton.getScene().getWindow().hide();
-                General.page("mainpage.fxml", 132, 247, "Пылесос умер");
+                General.page("mainpage.fxml", 132, 247, "Страница");
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
-//            String login = loginField.getText().trim();
-//            String pass = passField.getText().trim();
-//            loginButton.getScene().getWindow().hide();
-//            General.page("mainpage.fxml", 132, 247, "Пылесос умер");
         });
 
     }
