@@ -15,9 +15,6 @@ public class AccountController {
     private URL location;
 
     @FXML
-    private Button buttonDelete;
-
-    @FXML
     private Label labelAdmin;
 
     @FXML
